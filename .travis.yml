@@ -1,0 +1,28 @@
+language: python
+python:
+        - "3.5"
+#        - "2.7"
+
+# command to install dependencies
+#before_install:
+  # - wget http://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh
+  # - chmod +x miniconda.sh
+  # - ./miniconda.sh -b
+  # - export PATH=/home/travis/miniconda2/bin:$PATH
+  #- sudo apt-get -qq update
+  #- sudo apt-get install python3-pytest
+  #- sudo apt-get install python3-numpy
+
+
+install:
+#  - conda install numpy
+  - pip install -r requirements.txt
+
+
+# command to run tests
+script:
+  make test
+
+notifications:
+  email:
+    on_failure: always
