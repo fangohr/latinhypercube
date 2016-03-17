@@ -10,13 +10,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='sample',
+    name='latinhypercube',
     version='0.0.1',
-    description='Sample package for Python-Guide.org',
+    description='Latinhypercube package',
     long_description=readme,
     author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author_email='fangohr@soton.ac.uk',
+    url='https://github.com/fangohr/latinhypercube',
     license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )
