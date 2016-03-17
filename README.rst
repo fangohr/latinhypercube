@@ -1,6 +1,8 @@
-Sample Module Repository
-========================
+Latin Hyper Cube
+================
 
-This simple project is an example repo for Python projects.
+Simple library functions to support working with latin hyper cubes.
 
-`Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
+(Motivated by design of experiment and parameter space exploration).
+
+Hans Fangohr, March 2016
