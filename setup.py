@@ -14,7 +14,7 @@ setup(
     version='0.0.1',
     description='Latinhypercube package',
     long_description=readme,
-    author='Kenneth Reitz',
+    author='Hans Fangohr',
     author_email='fangohr@soton.ac.uk',
     url='https://github.com/fangohr/latinhypercube',
     license=license,
