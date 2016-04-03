@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Template file."""
 
 from .context import latinhypercube
 
@@ -9,6 +10,7 @@ class AdvancedTestSuite(unittest.TestCase):
     """Advanced test cases."""
 
     def test_thoughts(self):
+        """Hmm method."""
         latinhypercube.hmm()
 
 
