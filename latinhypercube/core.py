@@ -45,3 +45,13 @@ class Cube:
         # create numpy array for occupancy
         self.counts = np.zeros(tuple(self.subdivisions))
 
+    def iadd(self, index, increment=1):
+        """Add INCREMENT at hypercube index.
+
+        INDEX is a n-tuple for self.n, increment
+        is what should be added to that cell.
+
+        Return the new count value at the given index.
+        """
+        self.counts[index] += increment
+        return self.counts[index]

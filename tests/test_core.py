@@ -56,6 +56,6 @@ def test_add_value_index():
         ret = cube.iadd(index, increment=2)
         assert ret == 3
         assert cube.counts[i] == 3
-        ret = cube.iadd(index, increment=-4)
+        ret = cube.iadd(index, increment=-3)
         assert ret == 0
         assert cube.counts[i] == 0
