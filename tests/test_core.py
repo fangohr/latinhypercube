@@ -48,7 +48,7 @@ def test_add_value_index():
     cube = latinhypercube.Cube(1, np.array([5]))
 
     for i in range(5):
-        index = [i]
+        index = (i,)      # must be tuple
         assert cube.counts[i] == 0
         ret = cube.iadd(index, increment=1)  # return value is current count
         assert ret == 1
@@ -59,3 +59,23 @@ def test_add_value_index():
         ret = cube.iadd(index, increment=-3)
         assert ret == 0
         assert cube.counts[i] == 0
+
+    cube = latinhypercube.Cube(2, np.array([5, 2]))
+
+    for j in range(2):
+        for i in range(5):
+            index = (i, j)
+            assert cube.counts[i, j] == 0
+            # RETurn value is current count
+            ret = cube.iadd(index, increment=1)
+            assert ret == 1
+            assert cube.counts[i, j] == 1
+            ret = cube.iadd(index, increment=2)
+            assert ret == 3
+            assert cube.counts[i, j] == 3
+            ret = cube.iadd(index, increment=-3)
+            assert ret == 0
+            assert cube.counts[i, j] == 0
+
+    with pytest.raises(TypeError):
+        cube.iadd([0, 0])

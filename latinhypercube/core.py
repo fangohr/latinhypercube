@@ -53,5 +53,10 @@ class Cube:
 
         Return the new count value at the given index.
         """
+        if not isinstance(index, tuple):
+            raise TypeError("index='{}' ({}) must be of"\
+                " type tuple".format(index, type(index)))
+
+        print("index = {}".format(index))
         self.counts[index] += increment
         return self.counts[index]
