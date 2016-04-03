@@ -41,3 +41,21 @@ def test_reporting_just_initialised():
         cube.counts[5, 2]
     with pytest.raises(IndexError):
         cube.counts[6, 0]
+
+
+def test_add_value_index():
+    """Test adding values by index (IndexADD)."""
+    cube = latinhypercube.Cube(1, np.array([5]))
+
+    for i in range(5):
+        index = [i]
+        assert cube.counts[i] == 0
+        ret = cube.iadd(index, increment=1)  # return value is current count
+        assert ret == 1
+        assert cube.counts[i] == 1
+        ret = cube.iadd(index, increment=2)
+        assert ret == 3
+        assert cube.counts[i] == 3
+        ret = cube.iadd(index, increment=-4)
+        assert ret == 0
+        assert cube.counts[i] == 0
