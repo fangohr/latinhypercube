@@ -79,3 +79,25 @@ def test_add_value_index():
 
     with pytest.raises(TypeError):
         cube.iadd([0, 0])
+
+
+def test_eq():
+    """Testing equality comparison."""
+    cube1 = latinhypercube.Cube(1, [42])
+    cube2 = latinhypercube.Cube(2, [5, 2])
+    cube3 = latinhypercube.Cube(2, [5, 2])
+    cube4 = latinhypercube.Cube(3, [6, 2, 5])
+
+    assert cube1 != cube2
+    assert cube2 == cube3
+    assert cube3 != cube4
+    assert cube4 != cube1
+
+
+def test_repr():
+    """Testing representation method."""
+    cube = latinhypercube.Cube(2, [5, 2])
+    r = repr(cube)
+    cube_recreated = eval(r)
+    assert cube_recreated == cube
+

@@ -57,6 +57,20 @@ class Cube:
             raise TypeError("index='{}' ({}) must be of"
                             " type tuple".format(index, type(index)))
 
-        print("index = {}".format(index))
         self.counts[index] += increment
         return self.counts[index]
+
+    def __eq__(self, other):
+        """Compare two Cube objects."""
+        if self.n != other.n or self.subdivisions != other.subdivisions:
+            return False
+        # if we have data, do compare the data
+        if np.all(self.counts == other.counts):
+            return True
+        else:
+            return False
+
+    def __repr__(self):
+        """Represention of Cube object."""
+        msg = "latinhypercube.Cube({}, {})".format(self.n, self.subdivisions)
+        return msg
