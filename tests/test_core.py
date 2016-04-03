@@ -22,3 +22,22 @@ def test_initialiser():
 
     with pytest.raises(AssertionError):
         latinhypercube.Cube(-1, np.array([10]))
+
+
+def test_reporting_just_initialised():
+    """Test occupancy reporting from the cube."""
+    cube = latinhypercube.Cube(1, np.array([5]))
+    for i in range(5):
+        assert cube.counts[i] == 0
+    with pytest.raises(IndexError):
+        cube.counts[5]
+
+    cube = latinhypercube.Cube(2, np.array([5, 2]))
+    for i in range(5):
+        assert cube.counts[i, 0] == 0
+        assert cube.counts[i, 1] == 0
+
+    with pytest.raises(IndexError):
+        cube.counts[5, 2]
+    with pytest.raises(IndexError):
+        cube.counts[6, 0]
