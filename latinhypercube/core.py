@@ -1,6 +1,8 @@
-"""Core module."""
+"""Core module providing functionality of latinhypercube."""
 
 # -*- coding: utf-8 -*-
+
+import numpy as np
 
 
 def get_hmm():
@@ -39,4 +41,7 @@ class Cube:
 
         assert isinstance(self.n, int)
         assert n > 0
+
+        # create numpy array for occupancy
+        self.counts = np.zeros(tuple(self.subdivisions))
 
