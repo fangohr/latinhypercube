@@ -46,7 +46,7 @@ class Cube:
         self.counts = np.zeros(tuple(self.subdivisions))
 
     def iadd(self, index, increment=1):
-        """Add INCREMENT at hypercube index.
+        """IndexADD: Add INCREMENT at hypercube INDEX.
 
         INDEX is a n-tuple for self.n, increment
         is what should be added to that cell.
@@ -54,8 +54,8 @@ class Cube:
         Return the new count value at the given index.
         """
         if not isinstance(index, tuple):
-            raise TypeError("index='{}' ({}) must be of"\
-                " type tuple".format(index, type(index)))
+            raise TypeError("index='{}' ({}) must be of"
+                            " type tuple".format(index, type(index)))
 
         print("index = {}".format(index))
         self.counts[index] += increment
