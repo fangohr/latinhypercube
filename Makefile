@@ -3,3 +3,7 @@ init:
 
 test:
 	py.test -v .
+
+coverage:
+	py.test -v --cov=. --cov-report=html
+
